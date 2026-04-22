@@ -1,0 +1,41 @@
+
+.footer {
+  padding: 0 0 2rem;
+}
+
+.container {
+  width: min(var(--max-width), 92%);
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+
+  strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  span {
+    white-space: nowrap;
+    align-self: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card span {
+    white-space: normal;
+  }
+}

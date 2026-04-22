@@ -1,0 +1,35 @@
+
+.section {
+  padding: 5rem 0;
+}
+.container {
+  width: min(var(--max-width), 92%);
+  margin: 0 auto;
+}
+.card {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: start;
+  padding: 2rem;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  box-shadow: var(--shadow);
+
+  p { color: var(--muted); }
+}
+.label {
+  display: inline-flex;
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 182, 72, 0.12);
+  color: var(--primary-strong);
+}
+.primaryButton {
+  min-height: 52px;
+  padding: 0.95rem 1.35rem;
+  border-radius: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #172030;
+}

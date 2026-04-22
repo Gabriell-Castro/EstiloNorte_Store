@@ -1,0 +1,233 @@
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  background: rgba(7, 17, 31, 0.76);
+  border-bottom: 1px solid var(--border);
+}
+
+.container {
+  width: min(var(--max-width), 92%);
+  margin: 0 auto;
+}
+
+.nav {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.brand {
+  display: grid;
+  gap: 0.15rem;
+  font-weight: 800;
+
+  span {
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+  }
+
+  small {
+    color: var(--muted);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.menu,
+.authActions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.link,
+.activeLink {
+  color: var(--muted);
+  transition: color 0.22s ease, background 0.22s ease;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+}
+
+.link:hover,
+.activeLink {
+  color: var(--text);
+  background: rgba(255,255,255,0.05);
+}
+
+.activeLink {
+  box-shadow: inset 0 0 0 1px rgba(255, 182, 72, 0.22);
+}
+
+.counter {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.45rem;
+  height: 1.45rem;
+  margin-left: 0.3rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 182, 72, 0.16);
+  color: var(--primary-strong);
+  font-size: 0.8rem;
+}
+
+.profileChip {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 1rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+
+  strong {
+    font-size: 0.95rem;
+  }
+}
+
+.profileLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.2rem;
+  border-radius: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #172030;
+  box-shadow: 0 12px 30px rgba(255, 182, 72, 0.22);
+}
+
+.secondaryButton {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: rgba(255,255,255,0.03);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.menuToggle:hover {
+  transform: translateY(-2px);
+}
+
+.menuToggle {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+  z-index: 102;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    margin: 4px auto;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+  }
+}
+
+.open {
+  span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  span:nth-child(2) { opacity: 0; }
+  span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .menuToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 98;
+  }
+
+  .overlayVisible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(84vw, 360px);
+    height: 100vh;
+    padding: 6.5rem 1.2rem 1.4rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background: linear-gradient(180deg, rgba(10, 19, 35, 0.98), rgba(6, 13, 24, 0.98));
+    border-left: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transform: translateX(110%);
+    transition: transform 0.28s ease;
+    z-index: 101;
+  }
+
+  .panelOpen {
+    transform: translateX(0);
+  }
+
+  .menu,
+  .authActions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .link,
+  .activeLink,
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .profileChip {
+    text-align: center;
+  }
+}

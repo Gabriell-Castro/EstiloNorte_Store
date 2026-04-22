@@ -1,0 +1,103 @@
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.container {
+  width: min(var(--max-width), 92%);
+  margin: 0 auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.5rem;
+}
+
+.image,
+.card {
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.image {
+  width: 100%;
+  min-height: 620px;
+  object-fit: cover;
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: 2rem;
+  background: rgba(255,255,255,0.03);
+}
+
+.badge {
+  width: fit-content;
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 182, 72, 0.12);
+  color: var(--primary-strong);
+}
+
+.card h1 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.08;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.description,
+.infoGrid span,
+.message {
+  color: var(--muted);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+
+  div {
+    display: grid;
+    gap: 0.3rem;
+    padding: 1rem;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+}
+
+.primaryButton {
+  min-height: 54px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #172030;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.message {
+  width: min(var(--max-width), 92%);
+  margin: 4rem auto;
+}
+
+.error {
+  color: var(--danger);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    min-height: 420px;
+  }
+}

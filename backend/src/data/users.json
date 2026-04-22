@@ -1,0 +1,23 @@
+[
+  {
+    "id": "u1",
+    "name": "Administrador",
+    "email": "admin@estilonorte.com",
+    "password": "123456",
+    "role": "admin"
+  },
+  {
+    "id": "u2",
+    "name": "Cliente Demo",
+    "email": "cliente@estilonorte.com",
+    "password": "123456",
+    "role": "customer"
+  },
+  {
+    "id": "fUDahyuA",
+    "name": "fa",
+    "email": "aa@a.com",
+    "password": "$2a$10$.1RgDYMBPLcj9HrKq1pbX.Dp1N1VEYtZc87AHY1AcNyrSlYaW./Ti",
+    "role": "customer"
+  }
+]
